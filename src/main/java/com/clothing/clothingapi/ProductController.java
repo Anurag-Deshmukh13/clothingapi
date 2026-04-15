@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/")
 public class ProductController {
 
     private final ProductService service;
@@ -35,8 +35,8 @@ public class ProductController {
     // =========================
     // GET BY CATEGORY
     // =========================
-    @GetMapping("/category/{category}")
-    public List<ProductDTO> getByCategory(@PathVariable String category) {
+    @GetMapping("/category")
+    public List<ProductDTO> getByCategory(@RequestParam String category) {
         return service.getByCategory(category);
     }
 
