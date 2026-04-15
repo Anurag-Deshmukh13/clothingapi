@@ -41,35 +41,6 @@ public class ProductController {
     }
 
     // =========================
-    // SEARCH
-    // =========================
-    @GetMapping("/search")
-    public List<ProductDTO> search(@RequestParam String keyword) {
-        return service.searchProducts(keyword);
-    }
-
-    // =========================
-    // PAGINATION
-    // =========================
-    @GetMapping("/page")
-    public List<ProductDTO> getPage(@RequestParam int page,
-                                    @RequestParam int size) {
-        return service.getProductsPaginated(page, size);
-    }
-
-    // =========================
-    // FILTER
-    // =========================
-    @GetMapping("/filter")
-    public List<ProductDTO> filter(
-            @RequestParam(required = false) String category,
-            @RequestParam double minPrice,
-            @RequestParam double maxPrice) {
-
-        return service.filterProducts(category, minPrice, maxPrice);
-    }
-
-    // =========================
     // ADD PRODUCT
     // =========================
     @PostMapping
